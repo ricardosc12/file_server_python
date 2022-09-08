@@ -1,0 +1,250 @@
+@font-face {
+    font-family: 'Matrix';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''), url('./matrix.woff') format('woff');
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(0,130,0);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,150,0);
+}
+
+
+html {
+    background: black;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.root{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+}
+
+.box {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 600px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(255,255,255,.1),
+    0px 0px 10px black;
+    background-color: rgba(0,0,0,.5);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.header{
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 10px;
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+}
+
+.header p {
+    font-family: 'Matrix';
+    font-size: 15px;
+    color: rgba(255,255,255,.9);
+}
+
+span {
+    color: rgba(255,255,255,.9);
+    width: 16px;
+    height: 16px;
+
+}
+
+.header div {
+    background-color: rgba(0,255,0,.15);
+    border-radius: 3px;
+    height: 20px;
+}
+
+.header .arrow {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 100%;    
+}
+.header .arrow span {
+    cursor: pointer;
+}
+
+.header .arrow > :nth-child(2){
+    transform: rotateZ(180deg);
+}
+
+.header .origin {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+    padding: 0px 8px;
+}
+
+.header .origin > :nth-child(2), .header .origin > :nth-child(3){
+    margin-left: 10px;
+}
+.header .origin > :nth-child(3){
+    transform: rotateZ(270deg);
+}
+
+.header .search{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding: 0px 10px;
+    font-size: 13px;
+    width: 35%;
+    color: rgba(255,255,255,.7);
+    margin-left: 10px;
+    white-space: nowrap;
+}
+.header .search input {
+    all: unset;
+}
+.header .searchIcon{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    padding: 5px;
+}
+.header .searchIcon:hover{
+    background-color: rgba(0,255,0,.2);
+}
+.header .searchIcon span {
+    width: 13px;
+    height: 13px;
+    transform: rotateZ(-20deg);
+}
+
+.header .options {
+    display: flex;
+    align-items: center;
+    width: auto;
+    padding: 0px 5px;
+    margin-left: auto;
+}
+.header .options span {
+    margin-left: 5px;
+}
+.header .options > :nth-child(1){
+    margin-bottom: 4px;
+    margin-right: 2px;
+    margin-left: 0px;
+}
+
+.list {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    width: 100%;
+    height: calc(100% - 30px);
+    padding: 20px;
+}
+
+.list .file {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255,255,255,.8);
+    width: 70px;
+    height: 70px;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    transition: all 0.5s;
+}
+
+.list .file:hover{
+    transform: translate(-1px,-1px);
+    transition: all 0.5s;
+}
+
+.list .file svg {
+    color: rgba(0,255,0,.8);
+}
+
+.list .file span {
+    display: block;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    bottom: -4px;
+    font-size: 13px;
+    max-width: 60px;
+    font-weight: 500;
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list .file p {
+    display: flex;
+    font-family: 'Matrix';
+    margin-top: 15px;
+    font-size: 11px;
+    position: absolute;
+    color: rgba(0,0,0,.8);
+}
+
+.toltip {
+    display: flex;
+    position: absolute;
+    width: auto;
+    height: auto;
+    padding: 0px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    background-color: black;
+    color: rgba(0,255,0,0.8);
+    box-shadow: 0px 0px 2px rgba(0,255,0);
+}

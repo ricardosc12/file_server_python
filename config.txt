@@ -1,0 +1,11 @@
+PORT=789
+HOST=local:789
+PATH=./temp
+PUBLIC=false
+
+#Exemplo com ngrok
+#--comand: ngrok http 789
+#PORT=789
+#HOST=0c94-45-178-248-62.ngrok.io
+#PATH=./temp
+#PUBLIC=true
